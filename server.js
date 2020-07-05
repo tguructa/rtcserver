@@ -6,7 +6,7 @@ var socketIo = require("socket.io");        // web socket external module
 
 var cors = require('cors');
 
- var port = process.env.PORT || 8443;
+ var port = process.env.PORT || 8080;
 
 // This sample is using the easyrtc from parent folder.
 // To use this server_example folder only without parent folder:
