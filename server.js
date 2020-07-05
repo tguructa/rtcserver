@@ -6,7 +6,7 @@ var socketIo = require("socket.io");        // web socket external module
 
 var cors = require('cors');
 
- 
+ var port = process.env.PORT || 8443;
 
 // This sample is using the easyrtc from parent folder.
 // To use this server_example folder only without parent folder:
@@ -67,6 +67,6 @@ var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
 });
 
 // Listen on port 8080
-webServer.listen(8080, function () {
-    console.log('listening on http://localhost:8080');
+webServer.listen(port, function () {
+    console.log('listening on http://localhost:' + port);
 });
