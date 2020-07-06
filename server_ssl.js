@@ -24,8 +24,8 @@ httpApp.get('/', (req, res) => {
 
 // Start Express https server on port 8443
 var webServer = https.createServer({
-	key: fs.readFileSync("/etc/letsencrypt/live/telemd.xyz/privkey.pem"),
-    cert:  fs.readFileSync("/etc/letsencrypt/live/telemd.xyz/cert.pem")
+	key: fs.readFileSync(__dirname + "/certs/privkey.pem"),
+    cert:  fs.readFileSync(__dirname + "/certs/cert.pem")
     
 }, httpApp);
 
