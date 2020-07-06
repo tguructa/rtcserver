@@ -24,8 +24,9 @@ httpApp.get('/', (req, res) => {
 
 // Start Express https server on port 8443
 var webServer = https.createServer({
-    key:  fs.readFileSync("/etc/letsencrypt/live/telemd.xyz/fullchain.pem"),
-    cert: fs.readFileSync("/etc/letsencrypt/live/telemd.xyz/privkey.pem")
+	key: fs.readFileSync("/etc/letsencrypt/live/telemd.xyz/privkey.pem"),
+    cert:  fs.readFileSync("/etc/letsencrypt/live/telemd.xyz/cert.pem")
+    
 }, httpApp);
 
 // Start Socket.io so it attaches itself to Express server
