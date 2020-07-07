@@ -11,7 +11,7 @@ var cors = require('cors');
 
 var easyrtc = require("open-easyrtc");//require("../"); // EasyRTC internal module
 
-var port = process.env.PORT || 8443;
+var port = process.env.PORT || 443;
 
 // Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
 var httpApp = express();
