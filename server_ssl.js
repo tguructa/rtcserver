@@ -32,6 +32,46 @@ var webServer = https.createServer({
 // Start Socket.io so it attaches itself to Express server
 var socketServer = io.listen(webServer, {"log level":1});
 
+var myIceServers = [
+ {urls: ["stun:stun.l.google.com:19302"]},
+    {urls: ["stun:stun.sipgate.net"]},
+    {urls: ["stun:217.10.68.152"]},
+    {urls: ["stun:stun.sipgate.net:10000"]},
+    {urls: ["stun:217.10.68.152:10000"]},
+	{urls: ["stun:relay.backups.cz"]},
+  {
+     url: 'turn:relay.backups.cz',
+     credential: 'webrtc',
+     username: 'webrtc'
+ },
+ {
+     url: 'turn:relay.backups.cz?transport=tcp',
+     credential: 'webrtc',
+     username: 'webrtc'
+ },
+ {
+     url: 'turn:13.250.13.83:3478?transport=udp',
+     credential: 'YzYNCouZM1mhqhmseWk6',
+     username: 'YzYNCouZM1mhqhmseWk6'
+ },
+ {
+     url: 'turn:192.158.29.39:3478?transport=tcp',
+     credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+     username: '28224511:1379330808'
+ },
+ {
+     url: 'turn:turn.anyfirewall.com:443?transport=tcp',
+     credential: 'webrtc',
+     username: 'webrtc'
+ },
+ {
+     url: 'turn:turn.bistri.com:80',
+     credential: 'homeo',
+     username: 'homeo'
+ }
+];
+
+easyrtc.setOption("appIceServers", myIceServers);
 // Start EasyRTC server
 var rtc = easyrtc.listen(httpApp, socketServer);
 
